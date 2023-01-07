@@ -2,13 +2,13 @@ import dotenv from 'dotenv'
 dotenv.config()
 
 const conversationMap = {}
-let conversationTimeLimit = parseInt(process.env.CONVERSATION_MEMORY_SECONDS)*1000
+let conversationTimeLimit = parseInt(process.env.CONVERSATION_MEMORY_SECONDS)*1000 //set timelimit for conversations
 
 if(!conversationTimeLimit || conversationTimeLimit <= 0) {
     conversationTimeLimit = 300000
 }
 
-function getConversation(userid) {
+function getConversation(userid) { //getting conversations from users, and set last seen time
     let conversation  = {
         conversationID:undefined,
         parentMessageID:undefined
@@ -28,7 +28,7 @@ function getConversation(userid) {
     return conversation
 }
 
-function resetConversation(userid){
+function resetConversation(userid){ // function to reset conversations
     delete conversationMap[userid]
 }
 
@@ -47,9 +47,9 @@ function rmUnactive(){ // Function to delete Unactive converations/threads
         setTimeout(rmUnactive, 60000)
     }
 
-    rmUnactive()
-
 } 
+
+rmUnactive()
 
 export default {
     getConversation,
