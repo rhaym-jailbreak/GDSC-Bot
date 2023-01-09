@@ -6,6 +6,7 @@
   "author": "Ghellab Abderrahmane (Rhaym)",
   "license": "MIT",
   "main": "index.js",
+  "type": "module",
 
   "dependencies": {
     "discord.js": "^14.7.1",
