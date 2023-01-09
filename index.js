@@ -1,8 +1,7 @@
 import dotenv from 'dotenv'
 import { ChatGPTAPIBrowser } from 'chatgpt'
-import { AttachmentBuilder, ChannelType, Client, GatewayIntentBits, REST } from 'discord.js'
-import conversation from './conversation'
-import stablediffusion from './stablediffusion'
+import { AttachmentBuilder, ChannelType, Client, GatewayIntentBits, REST, Routes, Partials} from 'discord.js'
+import conversation from './conversation.js'
 
 const MRCL = 1500 //Max response chunk length
 
@@ -206,7 +205,7 @@ async function main() {
             hinteraction_ask(interactions)
     });
 
-    client.loggin(process.env.DISCORD_BOT_TOKEN);
+    client.login(process.env.DISCORD_BOT_TOKEN);
 }
 
 main()
