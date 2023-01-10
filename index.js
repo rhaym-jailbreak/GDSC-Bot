@@ -1,27 +1,40 @@
 import dotenv from 'dotenv'
 import { ChatGPTAPIBrowser } from 'chatgpt'
-import { AttachmentBuilder, ChannelType, Client, GatewayIntentBits, REST, Routes, Partials} from 'discord.js'
-import conversation from './conversation.js'
+import { Client, GatewayIntentBits, REST, Routes, Partials, ChannelType, AttachmentBuilder } from 'discord.js'
+import Conversations from './conversation.js'
+import stableDiffusion from './stableDiffusion.js';
 
-const MRCL = 1500 //Max response chunk length
-
+const MAX_RESPONSE_CHUNK_LENGTH = 1500
 dotenv.config()
 
-const commands = [{
-    name: 'Question',
-    description: 'Feel free to ask the bot',
-    type: '3',
-    required: true
-},
-{
-    name: 'help',
-    description: 'Get all commands',
-    type: '3',
-    required: true
-}];
+const commands = [
+    {
+        name: 'ask',
+        description: 'Feel free to ask the bot',
+        options: [
+            {
+                name: "question",
+                description: "Your question",
+                type: 3,
+                required: true
+            }
+        ]
+    },
+    {
+        name: 'image',
+        description: 'images generator powered by Dall-E',
+        options: [
+            {
+                name: "prompt",
+                description: "your topic",
+                type: 3,
+                required: true
+        }
+    ]
+    },
+];
 
-async function ChatGPT() {
-    // we use puppeteer to bypass cloudflare check (headful because of captchas)
+async function initChatGPT() {
     const api = new ChatGPTAPIBrowser({
         email: process.env.OPENAI_EMAIL,
         password: process.env.OPENAI_PASSWORD
@@ -29,36 +42,32 @@ async function ChatGPT() {
 
     await api.initSession()
 
-    const result = await api.sendMessage('Here we go...')
-    console.log(result.response)
-
     return {
         sendMessage: (message, opts = {}) => {
             return api.sendMessage(message, opts)
         }
-    }
+    };
 }
 
-async function Commands() {
-    const rest = new REST({ version: '10'}).setToken(process.env.DISCORD_BOT_TOKEN);
+async function initDiscordCommands() {
+    const rest = new REST({ version: '10' }).setToken(process.env.DISCORD_BOT_TOKEN);
 
     try {
-        console.log('refreshing commands...');
-        await rest.put(Routes.applicationCommands(process.env.DISCORD_CLIENT_ID), {body: commands});
-        console.log('reloaded commands successfully');
-    }
-    catch (error) {
+        console.log('Started refreshing application (/) commands.');
+        await rest.put(Routes.applicationCommands(process.env.DISCORD_CLIENT_ID), { body: commands });
+        console.log('Successfully reloaded application (/) commands.');
+    } catch (error) {
         console.error(error);
     }
 }
 
 async function main() {
-    const OpenAI = await ChatGPT().catch(e => {
+    const chatGTP = await initChatGPT().catch(e => {
         console.error(e)
         process.exit()
     })
 
-    await Commands()
+    await initDiscordCommands()
 
     const client = new Client({
         intents: [
@@ -67,142 +76,176 @@ async function main() {
             GatewayIntentBits.GuildIntegrations,
             GatewayIntentBits.DirectMessages,
             GatewayIntentBits.DirectMessageTyping,
-            GatewayIntentBits.MessageContent
+            GatewayIntentBits.MessageContent,
         ],
         partials: [Partials.Channel]
     });
 
     client.on('ready', () => {
-        console.log('Logged in as ${client.user.tag} successfully!');
+        console.log(`Logged in as ${client.user.tag}!`);
         console.log(new Date())
     });
 
-    async function Ask(question, hh, opts = {}) {
+    async function askQuestion(question, cb, opts = {}) {
 
-        const {conversationfo} = opts
+        const { conversationInfo } = opts
 
-        let timeout = setTimeout(() => { 
-            hh("Oh no, something went wrong!, (Timeout)")
-        }, 4500)
+        let tmr = setTimeout(() => {
+            cb("Oppss, something went wrong! (Timeout)")
+        }, 45000)
 
-        if(process.env.CONVERSATION_START_PROMPET.toLowerCase() != "false" && conversationfo.newConversation){
-            await OpenAI.sendMessage(process.env.CONVERSATION_START_PROMPET, {
-                conversationID: conversationfo.conversationID,
-                parentMessageID: conversationfo.parentMessageID
-                }).then(resonse => {
-                clearTimeout(timeout)
-                timeout = setTimeout(() => {
-                    hh("Oh no, something went wrong!, (Timeout)")
-                }, 4500)
+        if(process.env.CONVERSATION_START_PROMPT.toLowerCase() != "false" && conversationInfo.newConversation){
+            await chatGTP.sendMessage(process.env.CONVERSATION_START_PROMPT,{
+                conversationId: conversationInfo.conversationId,
+                parentMessageId: conversationInfo.parentMessageId
+            }).then(response => {
+                conversationInfo.conversationId = response.conversationId
+                conversationInfo.parentMessageId = response.messageId
+                clearTimeout(tmr)
+                tmr = setTimeout(() => {
+                    cb("Oppss, something went wrong! (Timeout)")
+                }, 45000)
             }).catch((e) => {
-                hh("Oh no, something went wrong!, (Error)")
-                console.error("DM error: " + e)
+                cb("Oppss, something went wrong! (Error)")
+                console.error("dm error : " + e)
             })
         }
-        
-        if (conversationfo) {
-            OpenAI.sendMessage(question, {
-                conversationID: conversationfo.conversationID,
-                parentMessageID: conversationfo.parentMessageID
-            }).then(responce => {
-                conversationfo.conversationID = response.conversationID
-                conversationfo.parentMessageID = response.messageID
-                clearTimeout(timeout)
-                hh(response.response)
+
+        if (conversationInfo) {
+            chatGTP.sendMessage(question,{
+                conversationId: conversationInfo.conversationId,
+                parentMessageId: conversationInfo.parentMessageId
+            }).then(response => {
+                conversationInfo.conversationId = response.conversationId
+                conversationInfo.parentMessageId = response.messageId
+                clearTimeout(tmr)
+                cb(response.response)
             }).catch((e) => {
-                hh("Oh no, something went wrong!, (Error)")
-                console.error("DM error: " + e)
+                cb("Oppss, something went wrong! (Error)")
+                console.error("dm error : " + e)
             })
-        }
-        else {
-            OpenAI.sendMessage(question).then(({response}) => {
-                console.log(response)
-                clearTimeout(timeout)
-                hh(response)
+        } else {
+            chatGTP.sendMessage(question).then(({response}) => {
+                //console.log(response)
+                clearTimeout(tmr)
+                cb(response)
             }).catch((e) => {
-                hh("Oh no, something went wrong!, (Error)")
-                console.error("/question error: " + e)
+                cb("Oppss, something went wrong! (Error)")
+                console.error("/ask error : " + e)
             })
         }
     }
 
-    async function SSR(resp, usr) { // a function to split and send ChatGPT's response to user
-        let tcount = 3;
-        while (resp.length > 0 && tcount > 0) {
+    async function splitAndSendResponse(resp, user) {
+        let tryCount = 3;
+        while (resp.length > 0 && tryCount > 0) {
             try {
-                let End = Math.min(MRCL, resp.length)
-                await usr.send(resp.slice(0, End))
-                resp = resp.slice(End, resp.length)
-            } catch(e) {
-                tcount--
-                console.error("SSR error: " + e + "/ Counter " + tcount)
+                let end = Math.min(MAX_RESPONSE_CHUNK_LENGTH, resp.length)
+                await user.send(resp.slice(0, end))
+                resp = resp.slice(end, resp.length)
+            } catch (e) {
+                tryCount--
+                console.error("splitAndSendResponse Error : " + e + " | Counter " + tryCount)
             }
         }
-
-        if(tcount <= 0)
-            throw "Failed to send DM :("
+        
+        if (tryCount <= 0) {
+            throw "Failed to send dm."
+        }
     }
 
     client.on("messageCreate", async message => {
-        if(process.env.ENABLE_DMS !== "true" || message.channel.type != ChannelType.DM || message.author.bot)
+        if (process.env.ENABLE_DIRECT_MESSAGES !== "true" || message.channel.type != ChannelType.DM || message.author.bot) {
             return;
-        
-        const usr = message.author
+        }
+        const user = message.author
 
-        console.log("--------DMs--------")
-        console.log("Date       : " + new Date())
-        console.log("UserID     : " + usr.id)
-        console.log("User       : " + usr.username)
-        console.log("Message    : " + message.content)
-        console.log("--------------------")
+        console.log("----Direct Message---")
+        console.log("Date    : " + new Date())
+        console.log("UserId  : " + user.id)
+        console.log("User    : " + user.username)
+        console.log("Message : " + message.content)
+        console.log("--------------")
 
-        if(message.content.toLocaleLowerCase() == "rest") {
-            conversation.resetConversation(usr.id)
-            usr.send("Who are you ?")
+        if (message.content.toLowerCase() == "reset") {
+            Conversations.resetConversation(user.id)
+            user.send("Who are you ?")
             return;
         }
 
-        let conversationfo = conversation.getConversation(usr.id)
+        let conversationInfo = Conversations.getConversation(user.id)
         try {
-            let sentMessage = await usr.send("GDSC bot is thinking...")
-            question(message.content, async(response) => {
-                if(response.length >= MRCL)
-                    SSR(response, usr)
-                else
+            let sentMessage = await user.send("GDSC bot is typing...")
+            askQuestion(message.content, async (response) => {
+                if (response.length >= MAX_RESPONSE_CHUNK_LENGTH) {
+                    splitAndSendResponse(response, user)
+                } else {
                     await sentMessage.edit(response)
-            }, {conversationfo})
-        } catch(e) {
+                }
+            }, { conversationInfo })
+        } catch (e) {
             console.error(e)
         }
     })
 
-    async function hinteraction_ask(interactions) {
-        const usr = interactions.usr
-
-        //Here we start the coversation
-
-        let conversationfo = conversation.getConversation(usr.id)
-
-        const question = interactions.options.getString("question")
+    async function handle_interaction_ask(interaction) {
+	    const user = interaction.user
+        
+        // Begin conversation
+	    let conversationInfo = Conversations.getConversation(user.id)
+        const question = interaction.options.getString("question")
         try {
-            await interactions.deferReply()
-            Ask(question, async(content) => {
-                if(content.length >= MRCL){
-                    const attachment = new AttachmentBuilder(Buffer.from(content, 'utf-8'), { name : 'response.txt' });
-                    await interactions.editReply({files: [attachment]})
+            await interaction.deferReply()
+            askQuestion(question, async (content) => {
+                if (content.length >= MAX_RESPONSE_CHUNK_LENGTH) {
+                    const attachment = new AttachmentBuilder(Buffer.from(content, 'utf-8'), { name: 'response.txt' });
+                    await interaction.editReply({ files: [attachment] })
+                } else {
+                    await interaction.editReply({ content })
                 }
-                else {
-                    await interactions.editReply({content})
-                }
-            }, {conversationfo})
-        } catch(e) {
-            console.log(e)
+            }, { conversationInfo })
+        } catch (e) {
+            console.error(e)
         }
     }
 
-    client.on("interactionCreate", async interactions => {
-        if(interactions.commandName == "ask") 
-            hinteraction_ask(interactions)
+    async function handle_interaction_image(interaction) {
+        const prompt = interaction.options.getString("prompt")
+        try {
+            await interaction.deferReply()
+            stableDiffusion.generate(prompt, async (result) => {
+                if (result.error) {
+                    await interaction.editReply({ content: "error..." })
+                    return;
+                }
+                try {
+                    const attachments = []
+                    for (let i = 0; i < result.results.length; i++) {
+                        let data = result.results[i].split(",")[1]
+                        const buffer = Buffer.from(data, "base64")
+                        let attachment = new AttachmentBuilder(buffer, { name: "result0.jpg" })
+                        attachments.push(attachment)
+                    }
+                    await interaction.editReply({ content: "done...", files: attachments })
+                } catch (e) {
+                    await interaction.editReply({ content: "error..." })
+                }
+
+            })
+        } catch (e) {
+            console.error(e)
+        }
+    }
+
+    client.on("interactionCreate", async interaction => {
+        switch (interaction.commandName) {
+            case "ask":
+                handle_interaction_ask(interaction)
+                break;
+            case "image":
+                handle_interaction_image(interaction)
+                break
+        }
     });
 
     client.login(process.env.DISCORD_BOT_TOKEN);
