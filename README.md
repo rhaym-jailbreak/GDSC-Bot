@@ -1,6 +1,8 @@
 # AI-DiscordBot
 An adorable multipurpose Discord Bot which has Info, Moderation, Fun Commands.
+
 Built for GDSC
+
 Made with love by [@rhaym-tech](https://github.com/rhaym-tech) and [@akhdari](https://github.com/akhdari)
 
 # Credits
