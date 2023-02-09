@@ -1,0 +1,208 @@
+{"level":30,"time":1675826209758,"pid":19778,"hostname":"MacBook-Pro","msg":"Validating config file and environment variables"}
+{"level":50,"time":1675826209759,"pid":19778,"hostname":"MacBook-Pro","msg":"env: BOT_TOKEN cannot be empty"}
+{"level":30,"time":1675827010100,"pid":20515,"hostname":"MacBook-Pro","msg":"Validating config file and environment variables"}
+{"level":50,"time":1675827010102,"pid":20515,"hostname":"MacBook-Pro","msg":"env: BOT_SECRET cannot be empty"}
+{"level":30,"time":1675827113793,"pid":20594,"hostname":"MacBook-Pro","msg":"Validating config file and environment variables"}
+{"level":50,"time":1675827113795,"pid":20594,"hostname":"MacBook-Pro","msg":"env: SESSION_PASSWORD cannot be empty"}
+{"level":30,"time":1675827609356,"pid":20893,"hostname":"MacBook-Pro","msg":"Validating config file and environment variables"}
+{"level":40,"time":1675827609358,"pid":20893,"hostname":"MacBook-Pro","msg":"env: SPOTIFY_CLIENT_ID or SPOTIFY_CLIENT_SECRET are missing. Spotify music links won't work"}
+{"level":40,"time":1675827609359,"pid":20893,"hostname":"MacBook-Pro","msg":"config.js: OWNER_IDS are empty"}
+{"level":40,"time":1675827609359,"pid":20893,"hostname":"MacBook-Pro","msg":"env: WEATHERSTACK_KEY is missing. Weather command won't work"}
+{"level":40,"time":1675827609359,"pid":20893,"hostname":"MacBook-Pro","msg":"env: STRANGE_API_KEY is missing. Image commands won't work"}
+{"level":30,"time":1675827609432,"pid":20893,"hostname":"MacBook-Pro","msg":"Loading commands..."}
+{"level":20,"time":1675827609439,"pid":20893,"hostname":"MacBook-Pro","msg":"Skipping Command anti. Category AUTOMOD is disabled"}
+{"level":20,"time":1675827609440,"pid":20893,"hostname":"MacBook-Pro","msg":"Skipping Command autodelete. Category AUTOMOD is disabled"}
+{"level":20,"time":1675827609500,"pid":20893,"hostname":"MacBook-Pro","msg":"Skipping Command automod. Category AUTOMOD is disabled"}
+{"level":20,"time":1675827609519,"pid":20893,"hostname":"MacBook-Pro","msg":"Skipping Command bank. Category ECONOMY is disabled"}
+{"level":20,"time":1675827609519,"pid":20893,"hostname":"MacBook-Pro","msg":"Skipping Command beg. Category ECONOMY is disabled"}
+{"level":20,"time":1675827609520,"pid":20893,"hostname":"MacBook-Pro","msg":"Skipping Command daily. Category ECONOMY is disabled"}
+{"level":20,"time":1675827609521,"pid":20893,"hostname":"MacBook-Pro","msg":"Skipping Command gamble. Category ECONOMY is disabled"}
+{"level":20,"time":1675827609984,"pid":20893,"hostname":"MacBook-Pro","msg":"Skipping slash command avatar. Disabled!"}
+{"level":20,"time":1675827609985,"pid":20893,"hostname":"MacBook-Pro","msg":"Skipping slash command botinvite. Disabled!"}
+{"level":20,"time":1675827609986,"pid":20893,"hostname":"MacBook-Pro","msg":"Skipping slash command botstats. Disabled!"}
+{"level":20,"time":1675827609987,"pid":20893,"hostname":"MacBook-Pro","msg":"Skipping slash command channelinfo. Disabled!"}
+{"level":20,"time":1675827609988,"pid":20893,"hostname":"MacBook-Pro","msg":"Skipping slash command emojiinfo. Disabled!"}
+{"level":20,"time":1675827609997,"pid":20893,"hostname":"MacBook-Pro","msg":"Skipping slash command guildinfo. Disabled!"}
+{"level":20,"time":1675827609997,"pid":20893,"hostname":"MacBook-Pro","msg":"Skipping slash command uptime. Disabled!"}
+{"level":20,"time":1675827609998,"pid":20893,"hostname":"MacBook-Pro","msg":"Skipping slash command userinfo. Disabled!"}
+{"level":20,"time":1675827609999,"pid":20893,"hostname":"MacBook-Pro","msg":"Skipping command bot. Disabled!"}
+{"level":20,"time":1675827610000,"pid":20893,"hostname":"MacBook-Pro","msg":"Skipping command info. Disabled!"}
+{"level":20,"time":1675827610007,"pid":20893,"hostname":"MacBook-Pro","msg":"Skipping slash command deafen. Disabled!"}
+{"level":20,"time":1675827610008,"pid":20893,"hostname":"MacBook-Pro","msg":"Skipping slash command disconnect. Disabled!"}
+{"level":20,"time":1675827610010,"pid":20893,"hostname":"MacBook-Pro","msg":"Skipping slash command move. Disabled!"}
+{"level":20,"time":1675827610010,"pid":20893,"hostname":"MacBook-Pro","msg":"Skipping slash command purge. Disabled!"}
+{"level":20,"time":1675827610011,"pid":20893,"hostname":"MacBook-Pro","msg":"Skipping slash command purgeattach. Disabled!"}
+{"level":20,"time":1675827610012,"pid":20893,"hostname":"MacBook-Pro","msg":"Skipping slash command purgebots. Disabled!"}
+{"level":20,"time":1675827610012,"pid":20893,"hostname":"MacBook-Pro","msg":"Skipping slash command purgelinks. Disabled!"}
+{"level":20,"time":1675827610012,"pid":20893,"hostname":"MacBook-Pro","msg":"Skipping slash command purgetoken. Disabled!"}
+{"level":20,"time":1675827610013,"pid":20893,"hostname":"MacBook-Pro","msg":"Skipping slash command purgeuser. Disabled!"}
+{"level":20,"time":1675827610014,"pid":20893,"hostname":"MacBook-Pro","msg":"Skipping slash command undeafen. Disabled!"}
+{"level":20,"time":1675827610015,"pid":20893,"hostname":"MacBook-Pro","msg":"Skipping slash command vmute. Disabled!"}
+{"level":20,"time":1675827610015,"pid":20893,"hostname":"MacBook-Pro","msg":"Skipping slash command vunmute. Disabled!"}
+{"level":20,"time":1675827610017,"pid":20893,"hostname":"MacBook-Pro","msg":"Skipping command purge. Disabled!"}
+{"level":20,"time":1675827610018,"pid":20893,"hostname":"MacBook-Pro","msg":"Skipping command voice. Disabled!"}
+{"level":20,"time":1675827610032,"pid":20893,"hostname":"MacBook-Pro","msg":"Skipping slash command eval. Disabled!"}
+{"level":20,"time":1675827610032,"pid":20893,"hostname":"MacBook-Pro","msg":"Skipping slash command leaveserver. Disabled!"}
+{"level":20,"time":1675827610033,"pid":20893,"hostname":"MacBook-Pro","msg":"Skipping slash command listservers. Disabled!"}
+{"level":20,"time":1675827610034,"pid":20893,"hostname":"MacBook-Pro","msg":"Skipping Command rank. Category STATS is disabled"}
+{"level":20,"time":1675827610035,"pid":20893,"hostname":"MacBook-Pro","msg":"Skipping Command stats. Category STATS is disabled"}
+{"level":20,"time":1675827610035,"pid":20893,"hostname":"MacBook-Pro","msg":"Skipping Command statstracking. Category STATS is disabled"}
+{"level":20,"time":1675827610036,"pid":20893,"hostname":"MacBook-Pro","msg":"Skipping Command levelup. Category STATS is disabled"}
+{"level":20,"time":1675827610036,"pid":20893,"hostname":"MacBook-Pro","msg":"Skipping Command suggest. Category SUGGESTION is disabled"}
+{"level":20,"time":1675827610038,"pid":20893,"hostname":"MacBook-Pro","msg":"Skipping Command suggestion. Category SUGGESTION is disabled"}
+{"level":30,"time":1675827610053,"pid":20893,"hostname":"MacBook-Pro","msg":"Loaded 92 commands"}
+{"level":30,"time":1675827610053,"pid":20893,"hostname":"MacBook-Pro","msg":"Loaded 73 slash commands"}
+{"level":30,"time":1675827610053,"pid":20893,"hostname":"MacBook-Pro","msg":"Loading contexts..."}
+{"level":30,"time":1675827610054,"pid":20893,"hostname":"MacBook-Pro","msg":"Loaded 0 USER contexts"}
+{"level":30,"time":1675827610054,"pid":20893,"hostname":"MacBook-Pro","msg":"Loaded 0 MESSAGE contexts"}
+{"level":30,"time":1675827610054,"pid":20893,"hostname":"MacBook-Pro","msg":"Loading events..."}
+{"level":30,"time":1675827610112,"pid":20893,"hostname":"MacBook-Pro","msg":"Loaded 15 events. Success (15) Failed (0)"}
+{"level":30,"time":1675827610603,"pid":20893,"hostname":"MacBook-Pro","msg":"VersionCheck: Your discord bot is up to date"}
+{"level":30,"time":1675827610603,"pid":20893,"hostname":"MacBook-Pro","msg":"Launching dashboard"}
+{"level":30,"time":1675827610827,"pid":20893,"hostname":"MacBook-Pro","msg":"Connecting to MongoDb..."}
+{"level":50,"time":1675827640965,"pid":20893,"hostname":"MacBook-Pro","err":{"type":"MongooseServerSelectionError","message":"Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://docs.atlas.mongodb.com/security-whitelist/","stack":"MongooseServerSelectionError: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://docs.atlas.mongodb.com/security-whitelist/\n    at NativeConnection.Connection.openUri (/Users/rhaym/Documents/GitHub/discordJS/node_modules/mongoose/lib/connection.js:825:32)\n    at /Users/rhaym/Documents/GitHub/discordJS/node_modules/mongoose/lib/index.js:417:10\n    at /Users/rhaym/Documents/GitHub/discordJS/node_modules/mongoose/lib/helpers/promiseOrCallback.js:41:5\n    at new Promise (<anonymous>)\n    at promiseOrCallback (/Users/rhaym/Documents/GitHub/discordJS/node_modules/mongoose/lib/helpers/promiseOrCallback.js:40:10)\n    at Mongoose._promiseOrCallback (/Users/rhaym/Documents/GitHub/discordJS/node_modules/mongoose/lib/index.js:1270:10)\n    at Mongoose.connect (/Users/rhaym/Documents/GitHub/discordJS/node_modules/mongoose/lib/index.js:416:20)\n    at Object.initializeMongoose (/Users/rhaym/Documents/GitHub/discordJS/src/database/mongoose.js:9:22)\n    at module.exports.launch (/Users/rhaym/Documents/GitHub/discordJS/dashboard/app.js:24:29)\n    at /Users/rhaym/Documents/GitHub/discordJS/bot.js:36:13","reason":{"type":"ReplicaSetNoPrimary","servers":{},"stale":false,"compatible":true,"heartbeatFrequencyMS":10000,"localThresholdMS":15,"setName":"atlas-rwjm2r-shard-0","maxElectionId":null,"maxSetVersion":null,"commonWireVersion":0,"logicalSessionTimeoutMinutes":null}},"msg":"Mongoose: Failed to connect to database: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://docs.atlas.mongodb.com/security-whitelist/"}
+{"level":30,"time":1675827841977,"pid":21042,"hostname":"MacBook-Pro","msg":"Validating config file and environment variables"}
+{"level":40,"time":1675827841979,"pid":21042,"hostname":"MacBook-Pro","msg":"env: SPOTIFY_CLIENT_ID or SPOTIFY_CLIENT_SECRET are missing. Spotify music links won't work"}
+{"level":40,"time":1675827841979,"pid":21042,"hostname":"MacBook-Pro","msg":"config.js: OWNER_IDS are empty"}
+{"level":40,"time":1675827841979,"pid":21042,"hostname":"MacBook-Pro","msg":"env: WEATHERSTACK_KEY is missing. Weather command won't work"}
+{"level":40,"time":1675827841979,"pid":21042,"hostname":"MacBook-Pro","msg":"env: STRANGE_API_KEY is missing. Image commands won't work"}
+{"level":30,"time":1675827842042,"pid":21042,"hostname":"MacBook-Pro","msg":"Loading commands..."}
+{"level":20,"time":1675827842053,"pid":21042,"hostname":"MacBook-Pro","msg":"Skipping Command anti. Category AUTOMOD is disabled"}
+{"level":20,"time":1675827842054,"pid":21042,"hostname":"MacBook-Pro","msg":"Skipping Command autodelete. Category AUTOMOD is disabled"}
+{"level":20,"time":1675827842107,"pid":21042,"hostname":"MacBook-Pro","msg":"Skipping Command automod. Category AUTOMOD is disabled"}
+{"level":20,"time":1675827842128,"pid":21042,"hostname":"MacBook-Pro","msg":"Skipping Command bank. Category ECONOMY is disabled"}
+{"level":20,"time":1675827842129,"pid":21042,"hostname":"MacBook-Pro","msg":"Skipping Command beg. Category ECONOMY is disabled"}
+{"level":20,"time":1675827842130,"pid":21042,"hostname":"MacBook-Pro","msg":"Skipping Command daily. Category ECONOMY is disabled"}
+{"level":20,"time":1675827842131,"pid":21042,"hostname":"MacBook-Pro","msg":"Skipping Command gamble. Category ECONOMY is disabled"}
+{"level":20,"time":1675827842741,"pid":21042,"hostname":"MacBook-Pro","msg":"Skipping slash command avatar. Disabled!"}
+{"level":20,"time":1675827842742,"pid":21042,"hostname":"MacBook-Pro","msg":"Skipping slash command botinvite. Disabled!"}
+{"level":20,"time":1675827842743,"pid":21042,"hostname":"MacBook-Pro","msg":"Skipping slash command botstats. Disabled!"}
+{"level":20,"time":1675827842745,"pid":21042,"hostname":"MacBook-Pro","msg":"Skipping slash command channelinfo. Disabled!"}
+{"level":20,"time":1675827842746,"pid":21042,"hostname":"MacBook-Pro","msg":"Skipping slash command emojiinfo. Disabled!"}
+{"level":20,"time":1675827842754,"pid":21042,"hostname":"MacBook-Pro","msg":"Skipping slash command guildinfo. Disabled!"}
+{"level":20,"time":1675827842755,"pid":21042,"hostname":"MacBook-Pro","msg":"Skipping slash command uptime. Disabled!"}
+{"level":20,"time":1675827842756,"pid":21042,"hostname":"MacBook-Pro","msg":"Skipping slash command userinfo. Disabled!"}
+{"level":20,"time":1675827842757,"pid":21042,"hostname":"MacBook-Pro","msg":"Skipping command bot. Disabled!"}
+{"level":20,"time":1675827842757,"pid":21042,"hostname":"MacBook-Pro","msg":"Skipping command info. Disabled!"}
+{"level":20,"time":1675827842764,"pid":21042,"hostname":"MacBook-Pro","msg":"Skipping slash command deafen. Disabled!"}
+{"level":20,"time":1675827842765,"pid":21042,"hostname":"MacBook-Pro","msg":"Skipping slash command disconnect. Disabled!"}
+{"level":20,"time":1675827842768,"pid":21042,"hostname":"MacBook-Pro","msg":"Skipping slash command move. Disabled!"}
+{"level":20,"time":1675827842768,"pid":21042,"hostname":"MacBook-Pro","msg":"Skipping slash command purge. Disabled!"}
+{"level":20,"time":1675827842769,"pid":21042,"hostname":"MacBook-Pro","msg":"Skipping slash command purgeattach. Disabled!"}
+{"level":20,"time":1675827842769,"pid":21042,"hostname":"MacBook-Pro","msg":"Skipping slash command purgebots. Disabled!"}
+{"level":20,"time":1675827842769,"pid":21042,"hostname":"MacBook-Pro","msg":"Skipping slash command purgelinks. Disabled!"}
+{"level":20,"time":1675827842770,"pid":21042,"hostname":"MacBook-Pro","msg":"Skipping slash command purgetoken. Disabled!"}
+{"level":20,"time":1675827842770,"pid":21042,"hostname":"MacBook-Pro","msg":"Skipping slash command purgeuser. Disabled!"}
+{"level":20,"time":1675827842771,"pid":21042,"hostname":"MacBook-Pro","msg":"Skipping slash command undeafen. Disabled!"}
+{"level":20,"time":1675827842772,"pid":21042,"hostname":"MacBook-Pro","msg":"Skipping slash command vmute. Disabled!"}
+{"level":20,"time":1675827842772,"pid":21042,"hostname":"MacBook-Pro","msg":"Skipping slash command vunmute. Disabled!"}
+{"level":20,"time":1675827842774,"pid":21042,"hostname":"MacBook-Pro","msg":"Skipping command purge. Disabled!"}
+{"level":20,"time":1675827842775,"pid":21042,"hostname":"MacBook-Pro","msg":"Skipping command voice. Disabled!"}
+{"level":20,"time":1675827842793,"pid":21042,"hostname":"MacBook-Pro","msg":"Skipping slash command eval. Disabled!"}
+{"level":20,"time":1675827842794,"pid":21042,"hostname":"MacBook-Pro","msg":"Skipping slash command leaveserver. Disabled!"}
+{"level":20,"time":1675827842794,"pid":21042,"hostname":"MacBook-Pro","msg":"Skipping slash command listservers. Disabled!"}
+{"level":20,"time":1675827842796,"pid":21042,"hostname":"MacBook-Pro","msg":"Skipping Command rank. Category STATS is disabled"}
+{"level":20,"time":1675827842796,"pid":21042,"hostname":"MacBook-Pro","msg":"Skipping Command stats. Category STATS is disabled"}
+{"level":20,"time":1675827842797,"pid":21042,"hostname":"MacBook-Pro","msg":"Skipping Command statstracking. Category STATS is disabled"}
+{"level":20,"time":1675827842798,"pid":21042,"hostname":"MacBook-Pro","msg":"Skipping Command levelup. Category STATS is disabled"}
+{"level":20,"time":1675827842799,"pid":21042,"hostname":"MacBook-Pro","msg":"Skipping Command suggest. Category SUGGESTION is disabled"}
+{"level":20,"time":1675827842801,"pid":21042,"hostname":"MacBook-Pro","msg":"Skipping Command suggestion. Category SUGGESTION is disabled"}
+{"level":30,"time":1675827842818,"pid":21042,"hostname":"MacBook-Pro","msg":"Loaded 92 commands"}
+{"level":30,"time":1675827842818,"pid":21042,"hostname":"MacBook-Pro","msg":"Loaded 73 slash commands"}
+{"level":30,"time":1675827842818,"pid":21042,"hostname":"MacBook-Pro","msg":"Loading contexts..."}
+{"level":30,"time":1675827842819,"pid":21042,"hostname":"MacBook-Pro","msg":"Loaded 0 USER contexts"}
+{"level":30,"time":1675827842819,"pid":21042,"hostname":"MacBook-Pro","msg":"Loaded 0 MESSAGE contexts"}
+{"level":30,"time":1675827842819,"pid":21042,"hostname":"MacBook-Pro","msg":"Loading events..."}
+{"level":30,"time":1675827842853,"pid":21042,"hostname":"MacBook-Pro","msg":"Loaded 15 events. Success (15) Failed (0)"}
+{"level":30,"time":1675827843439,"pid":21042,"hostname":"MacBook-Pro","msg":"VersionCheck: Your discord bot is up to date"}
+{"level":30,"time":1675827843439,"pid":21042,"hostname":"MacBook-Pro","msg":"Launching dashboard"}
+{"level":30,"time":1675827843625,"pid":21042,"hostname":"MacBook-Pro","msg":"Connecting to MongoDb..."}
+{"level":30,"time":1675827845081,"pid":21042,"hostname":"MacBook-Pro","msg":"Mongoose: Database connection established"}
+{"level":30,"time":1675827845107,"pid":21042,"hostname":"MacBook-Pro","msg":"Dashboard is listening on port 8080"}
+{"level":30,"time":1675827847117,"pid":21042,"hostname":"MacBook-Pro","msg":"Logged in as AI Rhaym's bot#8363! (1053744760705269801)"}
+{"level":20,"time":1675827847117,"pid":21042,"hostname":"MacBook-Pro","msg":"Node \"Local Node\" debug: connection: creating websocket..."}
+{"level":30,"time":1675827847119,"pid":21042,"hostname":"MacBook-Pro","msg":"Music Manager initialized"}
+{"level":30,"time":1675827847119,"pid":21042,"hostname":"MacBook-Pro","msg":"Initializing giveaways manager..."}
+{"level":50,"time":1675827847139,"pid":21042,"hostname":"MacBook-Pro","err":{"type":"Error","message":"Error: connect ECONNREFUSED 127.0.0.1:2333","stack":"Error: Error: connect ECONNREFUSED 127.0.0.1:2333\n    at Connection._onerror (/Users/rhaym/Documents/GitHub/discordJS/node_modules/lavaclient/dist/lib/node/Connection.js:145:33)\n    at callListener (/Users/rhaym/Documents/GitHub/discordJS/node_modules/ws/lib/event-target.js:290:14)\n    at WebSocket.onError (/Users/rhaym/Documents/GitHub/discordJS/node_modules/ws/lib/event-target.js:230:9)\n    at WebSocket.emit (node:events:513:28)\n    at emitErrorAndClose (/Users/rhaym/Documents/GitHub/discordJS/node_modules/ws/lib/websocket.js:1002:13)\n    at ClientRequest.<anonymous> (/Users/rhaym/Documents/GitHub/discordJS/node_modules/ws/lib/websocket.js:854:5)\n    at ClientRequest.emit (node:events:513:28)\n    at Socket.socketErrorListener (node:_http_client:494:9)\n    at Socket.emit (node:events:513:28)\n    at emitErrorNT (node:internal/streams/destroy:157:8)"},"msg":"Node \"Local Node\" encountered an error: Error: connect ECONNREFUSED 127.0.0.1:2333.: Error: connect ECONNREFUSED 127.0.0.1:2333"}
+{"level":30,"time":1675827847140,"pid":21042,"hostname":"MacBook-Pro","msg":"Node \"Local Node\" disconnected"}
+{"level":20,"time":1675827847140,"pid":21042,"hostname":"MacBook-Pro","msg":"Node \"Local Node\" debug: connection: unable to reconnect"}
+{"level":30,"time":1675827847241,"pid":21042,"hostname":"MacBook-Pro","msg":"Giveaway Manager initialized"}
+{"level":30,"time":1675827848009,"pid":21042,"hostname":"MacBook-Pro","msg":"Successfully registered interactions"}
+{"level":20,"time":1675827878311,"pid":21042,"hostname":"MacBook-Pro","error":"invalid_client"}
+{"level":50,"time":1675827878312,"pid":21042,"hostname":"MacBook-Pro","msg":"Failed to login to dashboard"}
+{"level":20,"time":1675827882144,"pid":21042,"hostname":"MacBook-Pro","error":"invalid_client"}
+{"level":50,"time":1675827882144,"pid":21042,"hostname":"MacBook-Pro","msg":"Failed to login to dashboard"}
+{"level":20,"time":1675827886073,"pid":21042,"hostname":"MacBook-Pro","error":"invalid_client"}
+{"level":50,"time":1675827886074,"pid":21042,"hostname":"MacBook-Pro","msg":"Failed to login to dashboard"}
+{"level":50,"time":1675828092195,"pid":21042,"hostname":"MacBook-Pro","err":{"type":"DiscordAPIError","message":"Unknown Message","stack":"DiscordAPIError[10008]: Unknown Message\n    at SequentialHandler.runRequest (/Users/rhaym/Documents/GitHub/discordJS/node_modules/@discordjs/rest/dist/index.js:667:15)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\n    at async SequentialHandler.queueRequest (/Users/rhaym/Documents/GitHub/discordJS/node_modules/@discordjs/rest/dist/index.js:464:14)\n    at async REST.request (/Users/rhaym/Documents/GitHub/discordJS/node_modules/@discordjs/rest/dist/index.js:910:22)\n    at async MessageManager.edit (/Users/rhaym/Documents/GitHub/discordJS/node_modules/discord.js/src/managers/MessageManager.js:175:15)","requestBody":{"files":[],"json":{"tts":false,"components":[],"flags":0}},"rawError":{"message":"Unknown Message","code":10008},"code":10008,"status":404,"method":"PATCH","url":"https://discord.com/api/v10/channels/1071141994572812300/messages/1072770878879825971"},"msg":"Unhandled exception: Unknown Message"}
+{"level":30,"time":1675828698207,"pid":21548,"hostname":"MacBook-Pro","msg":"Validating config file and environment variables"}
+{"level":40,"time":1675828698209,"pid":21548,"hostname":"MacBook-Pro","msg":"env: SPOTIFY_CLIENT_ID or SPOTIFY_CLIENT_SECRET are missing. Spotify music links won't work"}
+{"level":40,"time":1675828698209,"pid":21548,"hostname":"MacBook-Pro","msg":"config.js: OWNER_IDS are empty"}
+{"level":40,"time":1675828698209,"pid":21548,"hostname":"MacBook-Pro","msg":"env: WEATHERSTACK_KEY is missing. Weather command won't work"}
+{"level":40,"time":1675828698209,"pid":21548,"hostname":"MacBook-Pro","msg":"env: STRANGE_API_KEY is missing. Image commands won't work"}
+{"level":30,"time":1675828698269,"pid":21548,"hostname":"MacBook-Pro","msg":"Loading commands..."}
+{"level":20,"time":1675828698279,"pid":21548,"hostname":"MacBook-Pro","msg":"Skipping Command anti. Category AUTOMOD is disabled"}
+{"level":20,"time":1675828698280,"pid":21548,"hostname":"MacBook-Pro","msg":"Skipping Command autodelete. Category AUTOMOD is disabled"}
+{"level":20,"time":1675828698331,"pid":21548,"hostname":"MacBook-Pro","msg":"Skipping Command automod. Category AUTOMOD is disabled"}
+{"level":20,"time":1675828698343,"pid":21548,"hostname":"MacBook-Pro","msg":"Skipping Command bank. Category ECONOMY is disabled"}
+{"level":20,"time":1675828698344,"pid":21548,"hostname":"MacBook-Pro","msg":"Skipping Command beg. Category ECONOMY is disabled"}
+{"level":20,"time":1675828698344,"pid":21548,"hostname":"MacBook-Pro","msg":"Skipping Command daily. Category ECONOMY is disabled"}
+{"level":20,"time":1675828698345,"pid":21548,"hostname":"MacBook-Pro","msg":"Skipping Command gamble. Category ECONOMY is disabled"}
+{"level":20,"time":1675828698783,"pid":21548,"hostname":"MacBook-Pro","msg":"Skipping slash command avatar. Disabled!"}
+{"level":20,"time":1675828698784,"pid":21548,"hostname":"MacBook-Pro","msg":"Skipping slash command botinvite. Disabled!"}
+{"level":20,"time":1675828698785,"pid":21548,"hostname":"MacBook-Pro","msg":"Skipping slash command botstats. Disabled!"}
+{"level":20,"time":1675828698786,"pid":21548,"hostname":"MacBook-Pro","msg":"Skipping slash command channelinfo. Disabled!"}
+{"level":20,"time":1675828698787,"pid":21548,"hostname":"MacBook-Pro","msg":"Skipping slash command emojiinfo. Disabled!"}
+{"level":20,"time":1675828698795,"pid":21548,"hostname":"MacBook-Pro","msg":"Skipping slash command guildinfo. Disabled!"}
+{"level":20,"time":1675828698795,"pid":21548,"hostname":"MacBook-Pro","msg":"Skipping slash command uptime. Disabled!"}
+{"level":20,"time":1675828698798,"pid":21548,"hostname":"MacBook-Pro","msg":"Skipping slash command userinfo. Disabled!"}
+{"level":20,"time":1675828698799,"pid":21548,"hostname":"MacBook-Pro","msg":"Skipping command bot. Disabled!"}
+{"level":20,"time":1675828698800,"pid":21548,"hostname":"MacBook-Pro","msg":"Skipping command info. Disabled!"}
+{"level":20,"time":1675828698806,"pid":21548,"hostname":"MacBook-Pro","msg":"Skipping slash command deafen. Disabled!"}
+{"level":20,"time":1675828698807,"pid":21548,"hostname":"MacBook-Pro","msg":"Skipping slash command disconnect. Disabled!"}
+{"level":20,"time":1675828698809,"pid":21548,"hostname":"MacBook-Pro","msg":"Skipping slash command move. Disabled!"}
+{"level":20,"time":1675828698810,"pid":21548,"hostname":"MacBook-Pro","msg":"Skipping slash command purge. Disabled!"}
+{"level":20,"time":1675828698810,"pid":21548,"hostname":"MacBook-Pro","msg":"Skipping slash command purgeattach. Disabled!"}
+{"level":20,"time":1675828698811,"pid":21548,"hostname":"MacBook-Pro","msg":"Skipping slash command purgebots. Disabled!"}
+{"level":20,"time":1675828698811,"pid":21548,"hostname":"MacBook-Pro","msg":"Skipping slash command purgelinks. Disabled!"}
+{"level":20,"time":1675828698812,"pid":21548,"hostname":"MacBook-Pro","msg":"Skipping slash command purgetoken. Disabled!"}
+{"level":20,"time":1675828698812,"pid":21548,"hostname":"MacBook-Pro","msg":"Skipping slash command purgeuser. Disabled!"}
+{"level":20,"time":1675828698813,"pid":21548,"hostname":"MacBook-Pro","msg":"Skipping slash command undeafen. Disabled!"}
+{"level":20,"time":1675828698815,"pid":21548,"hostname":"MacBook-Pro","msg":"Skipping slash command vmute. Disabled!"}
+{"level":20,"time":1675828698815,"pid":21548,"hostname":"MacBook-Pro","msg":"Skipping slash command vunmute. Disabled!"}
+{"level":20,"time":1675828698817,"pid":21548,"hostname":"MacBook-Pro","msg":"Skipping command purge. Disabled!"}
+{"level":20,"time":1675828698818,"pid":21548,"hostname":"MacBook-Pro","msg":"Skipping command voice. Disabled!"}
+{"level":20,"time":1675828698832,"pid":21548,"hostname":"MacBook-Pro","msg":"Skipping slash command eval. Disabled!"}
+{"level":20,"time":1675828698833,"pid":21548,"hostname":"MacBook-Pro","msg":"Skipping slash command leaveserver. Disabled!"}
+{"level":20,"time":1675828698833,"pid":21548,"hostname":"MacBook-Pro","msg":"Skipping slash command listservers. Disabled!"}
+{"level":20,"time":1675828698834,"pid":21548,"hostname":"MacBook-Pro","msg":"Skipping Command rank. Category STATS is disabled"}
+{"level":20,"time":1675828698835,"pid":21548,"hostname":"MacBook-Pro","msg":"Skipping Command stats. Category STATS is disabled"}
+{"level":20,"time":1675828698836,"pid":21548,"hostname":"MacBook-Pro","msg":"Skipping Command statstracking. Category STATS is disabled"}
+{"level":20,"time":1675828698836,"pid":21548,"hostname":"MacBook-Pro","msg":"Skipping Command levelup. Category STATS is disabled"}
+{"level":20,"time":1675828698837,"pid":21548,"hostname":"MacBook-Pro","msg":"Skipping Command suggest. Category SUGGESTION is disabled"}
+{"level":20,"time":1675828698838,"pid":21548,"hostname":"MacBook-Pro","msg":"Skipping Command suggestion. Category SUGGESTION is disabled"}
+{"level":30,"time":1675828698852,"pid":21548,"hostname":"MacBook-Pro","msg":"Loaded 92 commands"}
+{"level":30,"time":1675828698852,"pid":21548,"hostname":"MacBook-Pro","msg":"Loaded 73 slash commands"}
+{"level":30,"time":1675828698852,"pid":21548,"hostname":"MacBook-Pro","msg":"Loading contexts..."}
+{"level":30,"time":1675828698853,"pid":21548,"hostname":"MacBook-Pro","msg":"Loaded 0 USER contexts"}
+{"level":30,"time":1675828698853,"pid":21548,"hostname":"MacBook-Pro","msg":"Loaded 0 MESSAGE contexts"}
+{"level":30,"time":1675828698853,"pid":21548,"hostname":"MacBook-Pro","msg":"Loading events..."}
+{"level":30,"time":1675828698882,"pid":21548,"hostname":"MacBook-Pro","msg":"Loaded 15 events. Success (15) Failed (0)"}
+{"level":30,"time":1675828699437,"pid":21548,"hostname":"MacBook-Pro","msg":"VersionCheck: Your discord bot is up to date"}
+{"level":30,"time":1675828699438,"pid":21548,"hostname":"MacBook-Pro","msg":"Launching dashboard"}
+{"level":30,"time":1675828699624,"pid":21548,"hostname":"MacBook-Pro","msg":"Connecting to MongoDb..."}
+{"level":30,"time":1675828700755,"pid":21548,"hostname":"MacBook-Pro","msg":"Mongoose: Database connection established"}
+{"level":30,"time":1675828700772,"pid":21548,"hostname":"MacBook-Pro","msg":"Dashboard is listening on port 8080"}
+{"level":30,"time":1675828702139,"pid":21548,"hostname":"MacBook-Pro","msg":"Logged in as AI Rhaym's bot#8363! (1053744760705269801)"}
+{"level":20,"time":1675828702139,"pid":21548,"hostname":"MacBook-Pro","msg":"Node \"Local Node\" debug: connection: creating websocket..."}
+{"level":30,"time":1675828702140,"pid":21548,"hostname":"MacBook-Pro","msg":"Music Manager initialized"}
+{"level":30,"time":1675828702140,"pid":21548,"hostname":"MacBook-Pro","msg":"Initializing giveaways manager..."}
+{"level":50,"time":1675828702152,"pid":21548,"hostname":"MacBook-Pro","err":{"type":"Error","message":"Error: connect ECONNREFUSED 127.0.0.1:2333","stack":"Error: Error: connect ECONNREFUSED 127.0.0.1:2333\n    at Connection._onerror (/Users/rhaym/Documents/GitHub/discordJS/node_modules/lavaclient/dist/lib/node/Connection.js:145:33)\n    at callListener (/Users/rhaym/Documents/GitHub/discordJS/node_modules/ws/lib/event-target.js:290:14)\n    at WebSocket.onError (/Users/rhaym/Documents/GitHub/discordJS/node_modules/ws/lib/event-target.js:230:9)\n    at WebSocket.emit (node:events:513:28)\n    at emitErrorAndClose (/Users/rhaym/Documents/GitHub/discordJS/node_modules/ws/lib/websocket.js:1002:13)\n    at ClientRequest.<anonymous> (/Users/rhaym/Documents/GitHub/discordJS/node_modules/ws/lib/websocket.js:854:5)\n    at ClientRequest.emit (node:events:513:28)\n    at Socket.socketErrorListener (node:_http_client:494:9)\n    at Socket.emit (node:events:513:28)\n    at emitErrorNT (node:internal/streams/destroy:157:8)"},"msg":"Node \"Local Node\" encountered an error: Error: connect ECONNREFUSED 127.0.0.1:2333.: Error: connect ECONNREFUSED 127.0.0.1:2333"}
+{"level":30,"time":1675828702153,"pid":21548,"hostname":"MacBook-Pro","msg":"Node \"Local Node\" disconnected"}
+{"level":20,"time":1675828702153,"pid":21548,"hostname":"MacBook-Pro","msg":"Node \"Local Node\" debug: connection: unable to reconnect"}
+{"level":30,"time":1675828702304,"pid":21548,"hostname":"MacBook-Pro","msg":"Giveaway Manager initialized"}
+{"level":30,"time":1675828702872,"pid":21548,"hostname":"MacBook-Pro","msg":"Successfully registered interactions"}
+{"level":20,"time":1675830026027,"pid":21548,"hostname":"MacBook-Pro","error":"invalid_client"}
+{"level":50,"time":1675830026028,"pid":21548,"hostname":"MacBook-Pro","msg":"Failed to login to dashboard"}
+{"level":50,"time":1675830784092,"pid":21548,"hostname":"MacBook-Pro","err":{"type":"DiscordAPIError","message":"Unknown Message","stack":"DiscordAPIError[10008]: Unknown Message\n    at SequentialHandler.runRequest (/Users/rhaym/Documents/GitHub/discordJS/node_modules/@discordjs/rest/dist/index.js:667:15)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\n    at async SequentialHandler.queueRequest (/Users/rhaym/Documents/GitHub/discordJS/node_modules/@discordjs/rest/dist/index.js:464:14)\n    at async REST.request (/Users/rhaym/Documents/GitHub/discordJS/node_modules/@discordjs/rest/dist/index.js:910:22)\n    at async MessageManager.edit (/Users/rhaym/Documents/GitHub/discordJS/node_modules/discord.js/src/managers/MessageManager.js:175:15)\n    at async Object.handleSlashCommand (/Users/rhaym/Documents/GitHub/discordJS/src/handlers/command.js:140:7)\n    at async module.exports (/Users/rhaym/Documents/GitHub/discordJS/src/events/interactions/interactionCreate.js:18:5)","requestBody":{"files":[],"json":{"content":"No response received, cancelling setup","tts":false,"components":[],"allowed_mentions":{"replied_user":false},"flags":0}},"rawError":{"message":"Unknown Message","code":10008},"code":10008,"status":404,"method":"PATCH","url":"https://discord.com/api/v10/channels/1026593014942019657/messages/1072782079781249095"},"msg":"interactionRun: Unknown Message"}
+{"level":50,"time":1675830839422,"pid":21548,"hostname":"MacBook-Pro","err":{"type":"DiscordAPIError","message":"Unknown Message","stack":"DiscordAPIError[10008]: Unknown Message\n    at SequentialHandler.runRequest (/Users/rhaym/Documents/GitHub/discordJS/node_modules/@discordjs/rest/dist/index.js:667:15)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\n    at async SequentialHandler.queueRequest (/Users/rhaym/Documents/GitHub/discordJS/node_modules/@discordjs/rest/dist/index.js:464:14)\n    at async REST.request (/Users/rhaym/Documents/GitHub/discordJS/node_modules/@discordjs/rest/dist/index.js:910:22)\n    at async MessageManager.edit (/Users/rhaym/Documents/GitHub/discordJS/node_modules/discord.js/src/managers/MessageManager.js:175:15)\n    at async Object.handleSlashCommand (/Users/rhaym/Documents/GitHub/discordJS/src/handlers/command.js:140:7)\n    at async module.exports (/Users/rhaym/Documents/GitHub/discordJS/src/events/interactions/interactionCreate.js:18:5)","requestBody":{"files":[],"json":{"content":"No response received, cancelling setup","tts":false,"components":[],"allowed_mentions":{"replied_user":false},"flags":0}},"rawError":{"message":"Unknown Message","code":10008},"code":10008,"status":404,"method":"PATCH","url":"https://discord.com/api/v10/channels/1026593014942019657/messages/1072782319896776786"},"msg":"interactionRun: Unknown Message"}
