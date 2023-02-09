@@ -14,7 +14,6 @@ description: 7 commands
 | **!meme \[category]**  | **/meme**      | get a random meme           |
 | **!together \[game]**  | **/together**  | discord together            |
 
-{% hint style="success" %}
 
 #### Available games:
 
@@ -22,4 +21,3 @@ description: 7 commands
 askaway, awkword, betrayal, bobble, checkers, chess, chessdev, doodlecrew, fishing, land, lettertile, meme, ocho, poker, puttparty, puttpartyqa, sketchheads, sketchyartist, spellcast, wordsnack, youtube, youtubedev
 ```
 
-{% endhint %}
