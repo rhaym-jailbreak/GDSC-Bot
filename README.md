@@ -41,8 +41,8 @@
 - Open the terminal and run the following commands
 
 ```
-git clone https://rhaym-tech/AI-DiscordBot.git
-cd AI-DiscordBot
+git clone https://rhaym-tech/GDSC-bot.git
+cd GDSC-bot
 npm install
 ```
 
