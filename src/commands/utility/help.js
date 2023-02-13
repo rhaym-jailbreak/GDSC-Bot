@@ -321,7 +321,7 @@ function getMsgCategoryEmbeds(client, category, prefix) {
     return [embed];
   }
 
-  if (commands.length === 0) {
+  if (category === "AI") {
     const embed = new EmbedBuilder()
       .setColor(EMBED_COLORS.BOT_EMBED)
       .setThumbnail(CommandCategory[category]?.image)
