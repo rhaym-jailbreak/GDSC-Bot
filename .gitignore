@@ -1,0 +1,6 @@
+#Ignore useless files
+
+DS_STORE
+node_modules
+.env
+.DS_Store

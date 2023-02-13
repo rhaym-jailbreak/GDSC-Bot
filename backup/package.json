@@ -1,0 +1,42 @@
+{
+  "name": "ai-discordbot",
+  "version": "1.0.0",
+  "description": "Rhaym's AI Discord Bot powered by OpenAI API and DiscordJS",
+  "homepage": "https://rhaym-tech.me/AI-DiscordBot",
+  "author": "Ghellab Abderrahmane (Rhaym)",
+  "license": "MIT",
+  "main": "index.js",
+  "type": "module",
+
+  "dependencies": {
+    "discord.js": "^14.7.1",
+    "chatgpt": "^3.3.11",
+    "puppeteer": "^19,4,1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  },
+
+  "scripts": {
+    "start": "node index.js"
+  },
+
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rhaym-tech/AI-DiscordBot.git"
+  },
+
+  "keywords": [
+    "Discord",
+    "DiscordJS",
+    "ChatGPT",
+    "OpenAI",
+    "AI",
+    "Bot",
+    "Discord"
+  ],
+
+  "bugs": {
+    "url": "https://github.com/rhaym-tech/AI-DiscordBot/issues"
+  }
+}
