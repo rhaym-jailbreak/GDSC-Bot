@@ -1,8 +1,8 @@
 {
   "name": "ai-discordbot",
-  "version": "1.0.0",
+  "version": "1.5.0",
   "description": "Rhaym's AI Discord Bot powered by OpenAI API and DiscordJS",
-  "homepage": "https://rhaym-tech.me/AI-DiscordBot",
+  "homepage": "https://rhaym-tech.me/GDSC-bot",
   "author": "Ghellab Abderrahmane (Rhaym)",
   "license": "MIT",
   "main": "index.js",
@@ -23,7 +23,7 @@
 
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rhaym-tech/AI-DiscordBot.git"
+    "url": "git+https://github.com/rhaym-tech/GDSC-bot/tree/AI-Bot.git"
   },
 
   "keywords": [
@@ -37,6 +37,6 @@
   ],
 
   "bugs": {
-    "url": "https://github.com/rhaym-tech/AI-DiscordBot/issues"
+    "url": "https://github.com/rhaym-tech/GDSC-bot/issues"
   }
 }
