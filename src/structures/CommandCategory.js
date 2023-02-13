@@ -1,6 +1,11 @@
 const config = require("@root/config");
 
 module.exports = {
+  AI: {
+    name: "Artificial Intelligence",
+    image: "https://static.vecteezy.com/system/resources/previews/002/596/399/non_2x/machine-learning-artificial-neural-network-ai-icon-vector.jpg",
+    emoji: "🧠",
+  },
   ADMIN: {
     name: "Admin",
     image: "https://icons.iconarchive.com/icons/dakirby309/simply-styled/256/Settings-icon.png",
@@ -14,7 +19,7 @@ module.exports = {
   },
   ANIME: {
     name: "Anime",
-    image: "https://wallpaperaccess.com/full/5680679.jpg",
+    image: "https://i.pinimg.com/originals/85/2e/fd/852efdd48e85132a507698f8ae4b224e.jpg",
     emoji: "🎨",
   },
   ECONOMY: {
@@ -25,25 +30,25 @@ module.exports = {
   },
   FUN: {
     name: "Fun",
-    image: "https://icons.iconarchive.com/icons/flameia/aqua-smiles/128/make-fun-icon.png",
+    image: "https://venngage-wordpress.s3.amazonaws.com/uploads/2022/09/meme_sad_frog.png",
     emoji: "😂",
   },
   GIVEAWAY: {
     name: "Giveaway",
     enabled: config.GIVEAWAYS.ENABLED,
-    image: "https://cdn-icons-png.flaticon.com/512/4470/4470928.png",
+    image: "https://cdn-icons-png.flaticon.com/512/5671/5671927.png",
     emoji: "🎉",
   },
   IMAGE: {
     name: "Image",
     enabled: config.IMAGE.ENABLED,
-    image: "https://icons.iconarchive.com/icons/dapino/summer-holiday/128/photo-icon.png",
+    image: "https://winaero.com/blog/wp-content/uploads/2019/09/Photos-app-icon-256-colorful.png",
     emoji: "🖼️",
   },
   INVITE: {
     name: "Invite",
     enabled: config.INVITE.ENABLED,
-    image: "https://cdn4.iconfinder.com/data/icons/general-business/150/Invite-512.png",
+    image: "https://invite.gg/assets/invite_white.png",
     emoji: "📨",
   },
   INFORMATION: {
