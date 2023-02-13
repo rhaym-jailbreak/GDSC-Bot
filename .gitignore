@@ -2,5 +2,6 @@
 
 DS_STORE
 node_modules
+backup
 .env
 .DS_Store
