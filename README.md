@@ -54,7 +54,7 @@ npm install
 
 - Wait for all the dependencies to be installed
 - Rename `.env.example` to `.env` and fill the values
-- Edit ``to control over bot's features
+- Edit `config.js`to control over bot's features
 - Type `npm run start` to start the bot
 
 <br>
