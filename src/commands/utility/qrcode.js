@@ -10,10 +10,7 @@ module.exports = {
   category: "UTILITY",
   botPermissions: ["ManageGuild"],
   command: {
-    enabled: true,
-    aliases: ["qr"],
-    usage: "<url>",
-    minArgsCount: 1,
+    enabled: false,
   },
   slashCommand: {
     enabled: true,
