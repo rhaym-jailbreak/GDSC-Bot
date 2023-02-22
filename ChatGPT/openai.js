@@ -1,5 +1,6 @@
 import dotenv from 'dotenv'
-import {ChatGPTAPIBrowser} from 'chatgpt'
+import {ChatGPTUnofficialProxyAPI} from 'chatgpt'
+import OpenAITokenGen from 'aikey'
 import {Client, GatewayIntentBits, REST, Routes, Partials, ChannelType, AttachmentBuilder } from 'discord.js';
 import Conversations from '../ChatGPT/conversation.js'
 import stableDiffusion from '../ChatGPT/stablediffusion.js';
@@ -8,49 +9,29 @@ const MRCL = process.env.MAX_RESPONSE_CHUNK_LENGTH
 dotenv.config()
 
 // Initialize OpenAI Session
+const chatGPT = {
+    init: false,
+    sendMessage: null,
+}
 async function initChatGPT() {
-    const loginType = process.env.LOGIN_TYPE;
-    const accountType = process.env.ACCOUNT_TYPE;
+    const tokengen = new OpenAITokenGen();
+    const accessToken = await (await tokengen.login(process.env.OPENAI_EMAIL, process.env.OPENAI_PASSWORD)).accessToken
+    const api = new ChatGPTUnofficialProxyAPI ({
+        accessToken: accessToken ,
+        apiReverseProxyUrl: process.env.REVERSE_PROXY_SERVER
+    })
 
-    if (loginType === 'openai' && accountType === 'free') {
-        const api = new ChatGPTAPIBrowser({
-            email: process.env.EMAIL,
-            password: process.env.PASSWORD
-        });
-        await api.initSession();
-        return api;
+    chatGPT.sendMessage = async (message, opts = {}) => {
+        let result = await api.sendMessage(message, {
+            ...opts
+        })
+
+        result.parentMessageId = result.id
+        return result
     }
-    else if (loginType === 'google' && accountType === 'free') {
-        const api = new ChatGPTAPIBrowser({
-            email: process.env.EMAIL,
-            password: process.env.PASSWORD,
-            isGoogleLogin: true
-        });
-        await api.initSession();
-        return api;
-    }
-    else if (loginType === 'openai' && accountType === 'pro') {
-        const api = new ChatGPTAPIBrowser({
-            email: process.env.EMAIL,
-            password: process.env.PASSWORD,
-            isProAccount: true
-        });
-        await api.initSession();
-        return api;
-    }
-    else if (loginType === 'google' && accountType === 'pro') {
-        const api = new ChatGPTAPIBrowser({
-            email: process.env.EMAIL,
-            password: process.env.PASSWORD,
-            isGoogleLogin: true,
-            isProAccount: true
-        });
-        await api.initSession();
-        return api;
-    }
-    else {
-        console.log(chalk.red('AI-Bot Error: Not a valid loginType or accountType'));
-    }
+    chatGPT.init = true
+    
+    setTimeout(initChatGPT, 8*60*60*1000) //renew Access token every 8 hours
 }
 
 export async function aifr() {
@@ -79,51 +60,34 @@ export async function aifr() {
 
     async function askQuestion(question, cb, opts = {}) {
 
+        if (!chatGPT.init) {
+            cb("Chatgpt not initialized!")
+            return;
+        }
+    
         const { conversationInfo } = opts
-
+    
         let tmr = setTimeout(() => {
             cb("Oppss, something went wrong! (Timeout)")
-        }, 120000)
-
+        }, 600000)
+    
         if (process.env.CONVERSATION_START_PROMPT.toLowerCase() != "false" && conversationInfo.newConversation) {
-            await chatGTP.sendMessage(process.env.CONVERSATION_START_PROMPT, {
-                conversationId: conversationInfo.conversationId,
-                parentMessageId: conversationInfo.parentMessageId
-            }).then(response => {
-                conversationInfo.conversationId = response.conversationId
-                conversationInfo.parentMessageId = response.messageId
-                clearTimeout(tmr)
-                tmr = setTimeout(() => {
-                    cb("Oppss, something went wrong! (Timeout)")
-                }, 45000)
-            }).catch((e) => {
-                cb("Oppss, something went wrong! (Error)")
-                console.error("dm error : " + e)
-            })
+            question = process.env.CONVERSATION_START_PROMPT + "\n\n" + question
         }
-
-        if (conversationInfo) {
-            chatGTP.sendMessage(question, {
+    
+        try{
+            const response = await chatGPT.sendMessage(question, {
                 conversationId: conversationInfo.conversationId,
                 parentMessageId: conversationInfo.parentMessageId
-            }).then(response => {
-                conversationInfo.conversationId = response.conversationId
-                conversationInfo.parentMessageId = response.messageId
-                clearTimeout(tmr)
-                cb(response.response)
-            }).catch((e) => {
-                cb("Oppss, something went wrong! (Error)")
-                console.error("dm error : " + e)
             })
-        } else {
-            chatGTP.sendMessage(question).then(({ response }) => {
-                //console.log(response)
-                clearTimeout(tmr)
-                cb(response)
-            }).catch((e) => {
-                cb("Oppss, something went wrong! (Error)")
-                console.error("/ask error : " + e)
-            })
+            conversationInfo.conversationId = response.conversationId
+            conversationInfo.parentMessageId = response.parentMessageId
+            cb(response.text)
+        }catch(e){
+            cb("Oppss, something went wrong! (Error)")
+            console.error("dm error : " + e)
+        }finally{
+            clearTimeout(tmr)
         }
     }
 
