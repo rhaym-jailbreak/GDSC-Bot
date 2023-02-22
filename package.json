@@ -9,14 +9,16 @@
   "type": "module",
   "dependencies": {
     "aikey": "^1.0.2",
-    "chatgpt": "^4.7.0",
+    "chatgpt": "^4.7.2",
     "discord.js": "^14.7.1"
   },
   "devDependencies": {
     "nodemon": "^2.0.20"
   },
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "debug": "node --trace-warnings --inspect index.js",
+    "dev": "nodemon --inspect index.js"
   },
   "repository": {
     "type": "git",
