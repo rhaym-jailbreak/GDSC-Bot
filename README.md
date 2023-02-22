@@ -33,7 +33,11 @@
 
 <h1 align="center">📦 Prerequisites</h1>
 
-- [Node.js](https://nodejs.org/en/) v16.11.0 or higher
+- [Node.js](https://nodejs.org/en/) v14.x or higher
+### note:
+- This bot assumes that `fetch` is installed.
+  - In `node >= 18`, it's installed by default.
+  - In `node < 18`, you need to install a polyfill like `unfetch/polyfill` ([guide](https://github.com/developit/unfetch#usage-as-a-polyfill)) or `isomorphic-fetch` ([guide](https://github.com/matthew-andrews/isomorphic-fetch#readme)).
 
 ## 🚀 Getting Started
 
