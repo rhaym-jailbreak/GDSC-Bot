@@ -5,7 +5,7 @@ const choices = ["nature", "sport", "color", "camp", "fruit", "discord", "winter
 module.exports = {
   name: "hangman",
   description: "Play hangman in discord",
-  cooldown: 15,
+  cooldown: 10,
   category: "FUN",
   botPermissions: ["SendMessages", "EmbedLinks", "AddReactions", "ReadMessageHistory", "ManageMessages"],
   command: {

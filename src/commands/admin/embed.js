@@ -24,7 +24,7 @@ module.exports = {
     enabled: true,
     usage: "<#channel>",
     minArgsCount: 1,
-    aliases: ["say"],
+    aliases: ["mbd"],
   },
   slashCommand: {
     enabled: true,
@@ -79,7 +79,7 @@ async function embedSetup(channel, member) {
     .awaitMessageComponent({
       componentType: ComponentType.Button,
       filter: (i) => i.customId === "EMBED_ADD" && i.member.id === member.id && i.message.id === sentMsg.id,
-      time: 20000,
+      time: 300000,
     })
     .catch((ex) => {});
 
@@ -132,7 +132,7 @@ async function embedSetup(channel, member) {
   // receive modal input
   const modal = await btnInteraction
     .awaitModalSubmit({
-      time: 1 * 60 * 1000,
+      time: 5 * 60 * 1000,
       filter: (m) => m.customId === "EMBED_MODAL" && m.member.id === member.id && m.message.id === sentMsg.id,
     })
     .catch((ex) => {});
