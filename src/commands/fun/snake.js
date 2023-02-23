@@ -6,7 +6,7 @@ const SnakeGame = require("snakecord");
 module.exports = {
   name: "snake",
   description: "play snake game on discord",
-  cooldown: 300,
+  cooldown: 10,
   category: "FUN",
   botPermissions: ["SendMessages", "EmbedLinks", "AddReactions", "ReadMessageHistory", "ManageMessages"],
   command: {
