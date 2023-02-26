@@ -1,6 +1,6 @@
 <h1 align="center">
   <br>
-  <a href="https://github.com/saiteja-madha"><img src="https://user-images.githubusercontent.com/43763935/217731885-832665fe-41ac-436d-aa76-a657d792953d.png" height="200" alt="GDSC"></a>
+  <a href="https://github.com/rhaym-tech"><img src="https://user-images.githubusercontent.com/43763935/217731885-832665fe-41ac-436d-aa76-a657d792953d.png" height="200" alt="GDSC"></a>
   <br>
   GDSC Discord Bot
   <br>
