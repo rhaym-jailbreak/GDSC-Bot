@@ -1,4 +1,4 @@
-const { Collection, EmbedBuilder, GuildMember } = require("discord.js");
+const { Collection, EmbedBuilder, GuildMember, ActionRowBuilder, ButtonBuilder, ButtonStyle } = require("discord.js");
 const { MODERATION } = require("@root/config");
 
 // Utils
@@ -27,6 +27,7 @@ const memberInteract = (issuer, target) => {
  * @param {string} type
  * @param {Object} data
  */
+
 const logModeration = async (issuer, target, reason, type, data = {}) => {
   if (!type) return;
   const { guild } = issuer;
@@ -36,10 +37,30 @@ const logModeration = async (issuer, target, reason, type, data = {}) => {
   if (settings.modlog_channel) logChannel = guild.channels.cache.get(settings.modlog_channel);
 
   const embed = new EmbedBuilder().setFooter({
-    text: `By ${issuer.displayName} • ${issuer.id}`,
+    text: `By ${issuer.displayName}`,
     iconURL: issuer.displayAvatarURL(),
   });
 
+  const buttons = new ActionRowBuilder()
+  .addComponents(
+    new ButtonBuilder()
+      .setCustomId('Ban_button')
+      .setLabel('Ban')
+      .setStyle(ButtonStyle.Danger),
+    new ButtonBuilder()
+      .setCustomId('Kick_Button')
+      .setLabel('Kick')
+      .setStyle(ButtonStyle.Danger),
+    new ButtonBuilder()
+      .setCustomId('Timeout_button')
+      .setLabel('Timeout')
+      .setStyle(ButtonStyle.Primary),
+    new ButtonBuilder()
+      .setCustomId('Ignore_button')
+      .setLabel('Ignore')
+      .setStyle(ButtonStyle.Success),
+  );
+  
   const fields = [];
   switch (type.toUpperCase()) {
     case "PURGE":
@@ -57,6 +78,16 @@ const logModeration = async (issuer, target, reason, type, data = {}) => {
 
     case "UNTIMEOUT":
       embed.setColor(MODERATION.EMBED_COLORS.UNTIMEOUT);
+      break;
+
+    case "REPORT":
+      embed.setAuthor({ name: `Moderation - ${type}` }).setThumbnail(target.displayAvatarURL());
+      fields.push(
+        { name: "Report Member: ", value: `Report: ${target.displayName} [${target.id}]`, inline: false },
+        { name: "Reported by:", value: `${issuer.displayName}`, inline: false }
+        );
+      embed.setColor(MODERATION.EMBED_COLORS.REPORT);
+      embed.setTimestamp();
       break;
 
     case "KICK":
@@ -100,14 +131,14 @@ const logModeration = async (issuer, target, reason, type, data = {}) => {
       break;
   }
 
-  if (type.toUpperCase() !== "PURGE") {
+  if (type.toUpperCase() !== "PURGE" ||"REPORT") {
     embed.setAuthor({ name: `Moderation - ${type}` }).setThumbnail(target.displayAvatarURL());
-
-    if (target instanceof GuildMember) {
-      fields.push({ name: "Member", value: `${target.displayName} [${target.id}]`, inline: false });
-    } else {
-      fields.push({ name: "User", value: `${target.tag} [${target.id}]`, inline: false });
-    }
+      if (target instanceof GuildMember) {
+        fields.push({ name: "Member", value: `${target.displayName} [${target.id}]`, inline: false });
+      } else {
+        fields.push({ name: "User", value: `${target.tag} [${target.id}]`, inline: false });
+      }
+  
 
     fields.push({ name: "Reason", value: reason || "No reason provided", inline: false });
 
@@ -125,7 +156,11 @@ const logModeration = async (issuer, target, reason, type, data = {}) => {
 
   embed.setFields(fields);
   await addModLogToDb(issuer, target, reason, type.toUpperCase());
-  if (logChannel) logChannel.safeSend({ embeds: [embed] });
+  if(type.toUpperCase() === "REPORT"){
+    if (logChannel) logChannel.safeSend({ embeds: [embed]/*, components: [buttons] */});
+  } else {
+    if (logChannel) logChannel.safeSend({ embeds: [embed] });
+  }
 };
 
 module.exports = class ModUtils {
@@ -321,6 +356,11 @@ module.exports = class ModUtils {
       error("kickTarget", ex);
       return "ERROR";
     }
+  }
+
+  static async reportTarget(issuer, target, reason) {
+    await logModeration(issuer, target, reason, "Report");
+  
   }
 
   /**

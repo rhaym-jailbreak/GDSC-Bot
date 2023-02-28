@@ -89,6 +89,7 @@ module.exports = {
     EMBED_COLORS: {
       TIMEOUT: "#102027",
       UNTIMEOUT: "#4B636E",
+      REPORT: "#FF0000",
       KICK: "#FF7961",
       SOFTBAN: "#AF4448",
       BAN: "#D32F2F",

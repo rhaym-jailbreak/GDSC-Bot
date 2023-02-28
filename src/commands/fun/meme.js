@@ -114,7 +114,7 @@ module.exports = {
 };
 
 async function getRandomEmbed(choice) {
-  const subReddits = ["meme", "Memes_Of_The_Dank", "memes", "dankmemes"];
+  const subReddits = ["meme", "Memes_Of_The_Dank", "memes", "dankmemes", "ProgrammingHumor"];
   let rand = choice ? choice : subReddits[getRandomInt(subReddits.length)];
 
   const response = await getJson(`https://www.reddit.com/r/${rand}/random/.json`);
@@ -126,6 +126,8 @@ async function getRandomEmbed(choice) {
   if (!Array.isArray(json) || json.length === 0) {
     return new EmbedBuilder().setColor(EMBED_COLORS.ERROR).setDescription(`No meme found matching ${choice}`);
   }
+
+  const post = posts[0].data;
 
   try {
     let permalink = json[0].data.children[0].data.permalink;
