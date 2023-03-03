@@ -1,9 +1,9 @@
 module.exports = {
-  OWNER_IDS: [702949304507170887], // Bot owner ID's
+  OWNER_IDS: ["702949304507170887"], // Bot owner ID's
   SUPPORT_SERVER: "https://discord.gg/ScwTGvU3Ns", // Your bot support server
   PREFIX_COMMANDS: {
     ENABLED: true, // Enable/Disable prefix commands
-    DEFAULT_PREFIX: "!", // Default prefix for the bot
+    DEFAULT_PREFIX: "$", // Default prefix for the bot
   },
   INTERACTIONS: {
     SLASH: true, // Should the interactions be enabled
@@ -54,20 +54,45 @@ module.exports = {
     ENABLED: true,
     IDLE_TIME: 60, // Time in seconds before the bot disconnects from an idle voice channel
     MAX_SEARCH_RESULTS: 5,
-    DEFAULT_SOURCE: "YT", // YT = Youtube, YTM = Youtube Music, SC = SoundCloud
+    DEFAULT_SOURCE: "SC", // YT = Youtube, YTM = Youtube Music, SC = SoundCloud
     // Add any number of lavalink nodes here
     // Refer to https://github.com/freyacodes/Lavalink to host your own lavalink server
     LAVALINK_NODES: [
       {
-        host: "localhost",
-        port: 2333,
-        password: "youshallnotpass",
-        id: "Local Node",
+        host: "lava1.horizxon.studio",
+        port: 80,
+        password: "horizxon.studio",
+        identifier: "",
+        retryDelay: 5000,
         secure: false,
       },
-    ],
+      {
+        host: "lava2.horizxon.studio",
+        port: 80,
+        password: "horizxon.studio",
+        identifier: "",
+        retryDelay: 5000,
+        secure: false,
+      },
+      {
+        host: "lava3.horizxon.studio",
+        port: 80,
+        password: "horizxon.studio",
+        identifier: "",
+        retryDelay: 5000,
+        secure: false,
+      },
+      {
+        host: "lava4.horizxon.studio",
+        port: 80,
+        password: "horizxon.studio",
+        identifier: "",
+        retryDelay: 5000,
+        secure: false,
+      },
+    ]
   },
-
+  
   GIVEAWAYS: {
     ENABLED: true,
     REACTION: "🎁",
