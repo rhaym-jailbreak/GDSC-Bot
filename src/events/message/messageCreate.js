@@ -30,6 +30,10 @@ module.exports = async (client, message) => {
       .setThumbnail(client.user.displayAvatarURL())
       .addFields({name: `Feel lost?`, value: `to view my commands list you can do command: ${settings.prefix}help or </help:1075324904305598535>`});
       components.push(new ButtonBuilder()
+      .setLabel("HomePage")
+      .setStyle(ButtonStyle.Link)
+      .setURL("https://discord.com/api/oauth2/authorize?client_id=1053744760705269801&permissions=8&scope=bot"));
+      components.push(new ButtonBuilder()
       .setURL(SUPPORT_SERVER)
       .setLabel("Support Server")
       .setStyle(ButtonStyle.Link));
@@ -45,7 +49,7 @@ module.exports = async (client, message) => {
       components.push(new ButtonBuilder()
       .setLabel("Top.gg vote")
       .setStyle(ButtonStyle.Link)
-      .setURL("https://rhaym-tech.me/")
+      .setURL("https://top.gg/bot/1053744760705269801")
       .setDisabled(true));
       let buttonsRow = new ActionRowBuilder().addComponents(components);
       message.channel.safeSend({embeds: [embed], components: [buttonsRow]});

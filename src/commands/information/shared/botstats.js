@@ -82,6 +82,7 @@ module.exports = (client) => {
 
   // Buttons
   let components = [];
+  components.push(new ButtonBuilder().setLabel("Homepage").setURL("https://rhaym-tech.me/infinity").setStyle(ButtonStyle.Link));
   components.push(new ButtonBuilder().setLabel("Invite Link").setURL(client.getInvite()).setStyle(ButtonStyle.Link));
 
   if (SUPPORT_SERVER) {

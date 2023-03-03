@@ -2,7 +2,7 @@ const { EmbedBuilder, ApplicationCommandOptionType } = require("discord.js");
 const { EMBED_COLORS } = require("@root/config");
 
 // This dummy token will be replaced by the actual token
-const DUMMY_TOKEN = "MY_TOKEN_IS_SECRET";
+const DUMMY_TOKEN = "No we don't do that here";
 
 /**
  * @type {import("@structures/Command")}
@@ -18,7 +18,7 @@ module.exports = {
     minArgsCount: 1,
   },
   slashCommand: {
-    enabled: false,
+    enabled: true,
     options: [
       {
         name: "expression",

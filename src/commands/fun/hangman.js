@@ -7,7 +7,6 @@ module.exports = {
   description: "Play hangman in discord",
   cooldown: 10,
   category: "FUN",
-  botPermissions: ["SendMessages", "EmbedLinks", "AddReactions", "ReadMessageHistory", "ManageMessages"],
   command: {
     enabled: true,
   },
