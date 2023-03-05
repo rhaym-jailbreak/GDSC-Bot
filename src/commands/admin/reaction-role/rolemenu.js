@@ -1,5 +1,5 @@
 const { SlashCommandBuilder } = require('@discordjs/builders');
-const { MessageActionRow, MessageEmbed, MessageSelectMenu, MessageButton } = require('discord.js');
+const { ActionRowBuilder, EmbedBuilder, SelectMenuBuilder, ButtonBuilder } = require('discord.js');
 const { interactionRun } = require('../autorole');
 /**
  * @type {import("@structures/Command")}
@@ -14,6 +14,7 @@ module.exports = {
     minArgsCount: 0,
   },
   slashCommand: {
+    ephemeral: true,
     enabled: true,
     options: [],
   },
@@ -112,7 +113,7 @@ module.exports = {
   },
 
   async interactionRun(interaction) {
-    const row = new MessageActionRow()
+    const row = new ActionRowBuilder()
       .addComponents(
         new MessageSelectMenu()
           .setCustomId('select')
@@ -121,17 +122,17 @@ module.exports = {
           .setMaxValues(1)
       );
 
-    const button = new MessageButton()
+    const button = new ButtonBuilder()
       .setCustomId('addRole')
       .setLabel('Add Role')
-      .setStyle('PRIMARY');
+      .setStyle(ButtonStyle.Primary);
 
     const messageContent = {
       content: 'Select a role:',
       components: [row],
     };
 
-    if (interaction.member.permissions.has('MANAGE_ROLES')) {
+    if (interaction.member.permissions.has('ManageRoles')) {
       messageContent.components[0].addComponents(button);
     }
 
@@ -169,7 +170,7 @@ module.exports = {
     });
 
     collector.on('end', async () => {
-      if (!msg.deleted) {
+      if (!msg.delete) {
         const messageContent = {
           content: 'Selection menu closed due to inactivity.',
           components: [msg.components[0].setDisabled(true)],
@@ -179,7 +180,7 @@ module.exports = {
       }
     });
 
-    const selectCollector = msg.createMessageComponentCollector({ componentType: 'SELECT_MENU', time: 15000 });
+    const selectCollector = msg.createMessageComponentCollector({ componentType: 'SelectMenu', time: 15000 });
 
     selectCollector.on('collect', async interaction => {
       const selectedRole = interaction.values[0];
@@ -188,12 +189,12 @@ module.exports = {
 
       if (role && !interaction.member.roles.cache.has(role.id)) {
         await interaction.member.roles.add(role.id);
-        await interaction.reply({ content: `Role '${role.name}' added.`, ephemeral: true });
+        await interaction.reply({ content: `Role '${role.name}' added.`});
       }
     });
 
     selectCollector.on('end', async () => {
-      if (!msg.deleted) {
+      if (!msg.delete) {
         const messageContent = {
           content: 'Selection menu closed due to inactivity.',
           components: [row.setDisabled(true)],
