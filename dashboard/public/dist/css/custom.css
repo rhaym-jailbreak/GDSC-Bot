@@ -3,4 +3,53 @@
     width: calc(80%);
     white-space: nowrap;
     text-overflow: ellipsis;
+    color: #fff;
+}
+.box.box-solid {
+    border-radius: 10px;
+}
+.box{
+  background: #101010!important;
+  box-shadow: 20px 20px 20px rgb(26 26 26 / 50%)!important;
+}
+
+.content-header>.breadcrumb>li>a{
+    color: white !important;
+}
+
+.sidebar {
+  background: #111111;
+}
+.skin-blue .wrapper, .skin-blue .main-sidebar, .skin-blue .left-side {
+  background-color: #111111 !important;
+}
+
+.skin-blue .sidebar-form {
+  border: 1px solid #ffffff !important;
+}
+
+.skin-blue .sidebar-form input[type="text"], .skin-blue .sidebar-form .btn {
+  background-color: #191919 !important;
+  color: #fff !important;
+}
+.skin-blue .sidebar-menu>li:hover>a, .skin-blue .sidebar-menu>li.active>a, .skin-blue .sidebar-menu>li.menu-open>a {
+  background: #080808!important;
+}
+
+.skin-blue .sidebar-menu>li.header {
+    color: #ffffff !important;
+    background: #101010 !important;
+}
+.box-header>.fa, .box-header>.glyphicon, .box-header>.ion, .box-header .box-title {
+  color: #fff !important
+}
+label {
+  color: #dedede !important;
+}
+
+.form-control {
+  color: #eee !important;
+  background-color: #303030 !important;
+  border-radius: 5px !important;
+  border-color: transparent !important;
 }
