@@ -44,8 +44,7 @@ module.exports = async (client, message) => {
       components.push(new ButtonBuilder()
       .setLabel("Dashboard")
       .setStyle(ButtonStyle.Link)
-      .setURL("https://rhaym-tech.me/")
-      .setDisabled(true));
+      .setURL("https://dashboard.infinity-bot.live"));
       components.push(new ButtonBuilder()
       .setLabel("Top.gg vote")
       .setStyle(ButtonStyle.Link)
