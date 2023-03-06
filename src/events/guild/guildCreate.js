@@ -13,12 +13,6 @@ module.exports = async (client, guild) => {
 
   if (!client.joinLeaveWebhook) return;
 
-// Define the channel ID
-const channelID = '1082306551693463592';
-
-// Fetch the channel by ID
-const channel = client.channels.cache.get(channelID);
-
   const embed = new EmbedBuilder()
     .setTitle("Server Joined")
     .setThumbnail(guild.iconURL())
@@ -46,8 +40,6 @@ const channel = client.channels.cache.get(channelID);
       }
     )
     .setFooter({ text: `Guild #${client.guilds.cache.size}` });
-  
-  channel.send(embed);
 
   client.joinLeaveWebhook.send({
     username: "Join",
