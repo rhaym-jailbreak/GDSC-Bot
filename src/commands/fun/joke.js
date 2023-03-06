@@ -15,7 +15,7 @@ const { EmbedBuilder } = require("discord.js");
     userPermissions: [],
     command: {
       enabled: true,
-      aliases: [jk],
+      aliases: ["jk"],
       usage: "[COMMAND]",
       minArgsCount: 0,
     },
