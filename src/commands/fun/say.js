@@ -33,7 +33,6 @@ module.exports = {
             return message.reply("Please provide some text to say!");
         }
         if (filter.isProfane(text)) {
-            console.log(filter.isProfane(text));
             return message.reply("I'm sorry, but I cannot say offensive or inappropriate words, including the bad word you provided. My purpose is to assist and provide helpful features to users in a professional and respectful manner. Let's keep the conversation positive and constructive.");
        }
         await message.channel.send(filter.clean(text));
