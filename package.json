@@ -28,6 +28,7 @@
     "@vitalets/google-translate-api": "^9.0.0",
     "aki-api": "^6.0.8",
     "ascii-table": "0.0.9",
+    "bad-words": "^3.0.4",
     "btoa": "^1.2.1",
     "common-tags": "^1.8.2",
     "connect-mongo": "^4.6.0",
